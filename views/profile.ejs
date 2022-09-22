@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Register App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="./css/dashboard.css">
+</head>
+
+<body>
+	  <div class="sidebar">
+		<div class="logo-details">
+		  <i class='bx bxl-c-plus-plus icon'></i>
+			<div class="logo_name">Dashboard</div>
+			<i class='bx bx-menu' id="btn" ></i>
+		</div>
+		<ul class="nav-list">
+		  <li>
+			  <i class='bx bx-search' ></i>
+			 <input type="text" placeholder="Search...">
+			 <span class="tooltip">Search</span>
+		  </li>
+		  <li>
+			<a href="#">
+			  <i class='bx bx-grid-alt'></i>
+			  <span class="links_name">Dashboard</span>
+			</a>
+			 <span class="tooltip">Dashboard</span>
+		  </li>
+		  <li>
+		   <a href="#">
+			 <i class='bx bx-user' ></i>
+			 <span class="links_name">User</span>
+		   </a>
+		   <span class="tooltip">User</span>
+		 </li>
+		 <li>
+		   <a href="#">
+			 <i class='bx bx-chat' ></i>
+			 <span class="links_name">Messages</span>
+		   </a>
+		   <span class="tooltip">Messages</span>
+		 </li>
+		 <li>
+		   <a href="#">
+			<i class='bx bxs-location-plus'></i>
+			 <span class="links_name">Location</span>
+		   </a>
+		   <span class="tooltip">Location</span>
+		 </li>
+		 <li>
+		   <a href="#">
+			 <i class='bx bx-cart-alt' ></i>
+			 <span class="links_name">Order</span>
+		   </a>
+		   <span class="tooltip">Order</span>
+		 </li>
+		 <li>
+		   <a href="#">
+			 <i class='bx bx-heart' ></i>
+			 <span class="links_name">Saved</span>
+		   </a>
+		   <span class="tooltip">Saved</span>
+		 </li>
+		 <li>
+		   <a href="#">
+			 <i class='bx bx-cog' ></i>
+			 <span class="links_name">Setting</span>
+		   </a>
+		   <span class="tooltip">Setting</span>
+		 </li>
+		 <li class="profile">
+			 <div class="profile-details">
+			   <img src="profile.jpg" alt="profileImg">
+			   <div class="name_job">
+				 <div class="name"><%= name %></div>
+				 <div class="job"><%= email %></div>
+			   </div>
+			 </div>
+			 <a href="/logout"><i class='bx bx-log-out' id="log_out" ></i></a>
+		 </li>
+		</ul>
+	  </div>
+	  <section class="home-section">
+		  <div class="text">Dashboard</div>
+		  <!--Google map-->
+          <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.606490001945!2d76.04582841479959!3d22.96471508498244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396319d5ed40454b%3A0x6a068af13a29cbb!2sHotel%20Ramashray%20Paradise!5e0!3m2!1sen!2sin!4v1663684618523!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <!--Google Maps-->
+	  </section>
+
+	<script src="./js/script.js"></script>
+</body>
+
+</html>

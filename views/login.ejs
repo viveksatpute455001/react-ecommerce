@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Register App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./css/main.css">
+
+	<script type="text/javascript">
+		$(document).ready(() => {
+
+			$("#form").submit((event) => {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/login',
+					data: $('#form').serialize(),
+					dataType: "json",
+					success: (response) => {
+						$('#form')[0].reset();
+
+						document.getElementById("check").innerHTML = response.Success;
+						//ADD THIS CODE
+						setTimeout(() => {
+							document.getElementById("check").innerHTML = "";
+						}, 3000);
+						if (response.Success == "Success!") {
+							document.getElementById("_blank").click();
+						};
+					},
+					error: () => {
+					}
+				})
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+    <div class="loginbox">
+        <form id="form" method="post">
+			<h2>Login</h2>
+            <div class="mssg">
+				<span id="check"></span>
+			</div>
+            <div class="inputBox">
+                <input name="email" type="email" required class="validate" pattern="[-!#$%&'*+\/0-9=?ก-๙A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?ก-๙A-Z^_a-z`{|}~])*@[ก-๙a-zA-Z0-9](-*\.?[ก-๙a-zA-Z0-9])*\.[ก-๙a-zA-Z](-?[ก-๙a-zA-Z0-9])+$">
+				<span>Email Address</span>
+				<i></i>
+			</div>
+            <div class="inputBox">
+                <input name="password" type="password" required class="validate" autocomplete="off">
+				<span>Password</span>
+				<i></i>
+            </div>
+			<div class="links">
+				<a href="/forgetpass">Forgot Password ?</a>
+				<a href="/">Register here</a>
+			</div>
+            <input type="submit" value="Log In" />
+        </form>
+    </div>
+	<a href="/profile" id="_blank"></a>
+</body>
+</html>
